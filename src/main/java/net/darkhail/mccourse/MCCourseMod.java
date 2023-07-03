@@ -2,6 +2,7 @@ package net.darkhail.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.darkhail.mccourse.block.ModBlocks;
+import net.darkhail.mccourse.item.ModCreativeModeTabs;
 import net.darkhail.mccourse.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,6 +30,8 @@ public class MCCourseMod
     public MCCourseMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register((modEventBus));
         ModBlocks.register(modEventBus);
