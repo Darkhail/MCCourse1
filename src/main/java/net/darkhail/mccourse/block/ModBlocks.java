@@ -1,6 +1,7 @@
 package net.darkhail.mccourse.block;
 
 import net.darkhail.mccourse.MCCourseMod;
+import net.darkhail.mccourse.block.custom.SoundBlock;
 import net.darkhail.mccourse.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -41,6 +42,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> NETHER_ALEXANDRITE_ORE = registerBlock("nether_alexandrite_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)
                     .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
+
+    public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
