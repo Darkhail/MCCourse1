@@ -2,6 +2,7 @@ package net.darkhail.mccourse.item;
 
 import net.darkhail.mccourse.MCCourseMod;
 import net.darkhail.mccourse.item.custom.FuelItem;
+import net.darkhail.mccourse.item.custom.HammerItem;
 import net.darkhail.mccourse.item.custom.MetalDetectorItem;
 import net.darkhail.mccourse.item.custom.PaxelItem;
 import net.minecraft.world.item.*;
@@ -38,6 +39,8 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.ALEXANDRITE, 2, 3, new Item.Properties().durability(256)));
     public static final RegistryObject<Item> ALEXANDRITE_PAXEL = ITEMS.register("alexandrite_paxel",
             () -> new PaxelItem(ModToolTiers.ALEXANDRITE, 2, 3, new Item.Properties().durability(256)));
+    public static final RegistryObject<Item> ALEXANDRITE_HAMMER = ITEMS.register("alexandrite_hammer",
+            () -> new HammerItem(ModToolTiers.ALEXANDRITE, 2, 3, new Item.Properties().durability(256)));
 
 
     public static void register(IEventBus eventBus) {
