@@ -1,10 +1,7 @@
 package net.darkhail.mccourse.item;
 
 import net.darkhail.mccourse.MCCourseMod;
-import net.darkhail.mccourse.item.custom.FuelItem;
-import net.darkhail.mccourse.item.custom.HammerItem;
-import net.darkhail.mccourse.item.custom.MetalDetectorItem;
-import net.darkhail.mccourse.item.custom.PaxelItem;
+import net.darkhail.mccourse.item.custom.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,7 +25,7 @@ public class ModItems {
             () -> new FuelItem(new Item.Properties(), 200));
 
     public static final RegistryObject<Item> ALEXANDRITE_SWORD = ITEMS.register("alexandrite_sword",
-            () -> new SwordItem(ModToolTiers.ALEXANDRITE, 2, 3, new Item.Properties().durability(256)));
+            () -> new SlowingSwordItem(ModToolTiers.ALEXANDRITE, 2, 3, new Item.Properties().durability(256)));
     public static final RegistryObject<Item> ALEXANDRITE_PICKAXE = ITEMS.register("alexandrite_pickaxe",
             () -> new PickaxeItem(ModToolTiers.ALEXANDRITE, 1, 2, new Item.Properties().durability(256)));
     public static final RegistryObject<Item> ALEXANDRITE_SHOVEL = ITEMS.register("alexandrite_shovel",
