@@ -2,6 +2,7 @@ package net.darkhail.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.darkhail.mccourse.block.ModBlocks;
+import net.darkhail.mccourse.enchantment.ModEnchantments;
 import net.darkhail.mccourse.item.ModCreativeModeTabs;
 import net.darkhail.mccourse.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -35,6 +36,8 @@ public class MCCourseMod
 
         ModItems.register((modEventBus));
         ModBlocks.register(modEventBus);
+
+        ModEnchantments.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
