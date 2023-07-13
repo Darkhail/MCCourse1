@@ -1,6 +1,7 @@
 package net.darkhail.mccourse.block;
 
 import net.darkhail.mccourse.MCCourseMod;
+import net.darkhail.mccourse.block.custom.AlexandriteLampBlock;
 import net.darkhail.mccourse.block.custom.SoundBlock;
 import net.darkhail.mccourse.item.ModItems;
 import net.minecraft.sounds.SoundEvents;
@@ -69,6 +70,9 @@ public class ModBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), BlockSetType.IRON));
     public static final RegistryObject<Block> ALEXANDRITE_TRAP_DOOR = registerBlock("alexandrite_trap_door",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), BlockSetType.IRON));
+    public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
+            () -> new AlexandriteLampBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.GLASS)
+                    .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
