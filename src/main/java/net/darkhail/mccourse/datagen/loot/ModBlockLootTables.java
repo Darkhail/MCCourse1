@@ -42,10 +42,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.ALEXANDRITE_STAIRS.get());
         this.add(ModBlocks.ALEXANDRITE_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.ALEXANDRITE_SLAB.get()));
-
         this.dropSelf(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get());
         this.dropSelf(ModBlocks.ALEXANDRITE_BUTTON.get());
-
         this.dropSelf(ModBlocks.ALEXANDRITE_FENCE.get());
         this.dropSelf(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
         this.dropSelf(ModBlocks.ALEXANDRITE_WALL.get());
@@ -58,6 +56,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(KohlrabiCropBlock.AGE, 6));
         this.add(ModBlocks.KOHLRABI_CROP.get(),
                 this.createCropDrops(ModBlocks.KOHLRABI_CROP.get(), ModItems.KOHLRABI.get(), ModItems.KOHLRABI_SEEDS.get(), lootItemcondition$builder1));
+
+        this.dropSelf(ModBlocks.SNAPDRAGON.get());
+        this.add(ModBlocks.POTTED_SNAPDRAGON.get(),
+                createPotFlowerItemTable(ModBlocks.POTTED_SNAPDRAGON.get()));
+
     }
 
     @Override
