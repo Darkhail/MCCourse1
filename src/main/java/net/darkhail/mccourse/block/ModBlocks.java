@@ -2,6 +2,7 @@ package net.darkhail.mccourse.block;
 
 import net.darkhail.mccourse.MCCourseMod;
 import net.darkhail.mccourse.block.custom.AlexandriteLampBlock;
+import net.darkhail.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.darkhail.mccourse.block.custom.KohlrabiCropBlock;
 import net.darkhail.mccourse.block.custom.SoundBlock;
 import net.darkhail.mccourse.item.ModItems;
@@ -85,6 +86,9 @@ public class ModBlocks {
             () -> new FlowerBlock(() -> MobEffects.BLINDNESS, 6, BlockBehaviour.Properties.copy(Blocks.ALLIUM)));
     public static final RegistryObject<Block> POTTED_SNAPDRAGON = BLOCKS.register("potted_snapdragon",
             () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), SNAPDRAGON, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+
+    public static final RegistryObject<Block> GEM_EMPOWERING_STATION = registerBlock("gem_empowering_station",
+            () -> new GemEmpoweringStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
