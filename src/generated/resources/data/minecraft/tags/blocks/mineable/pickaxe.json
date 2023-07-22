@@ -1,0 +1,16 @@
+{
+  "values": [
+    "mccourse:alexandrite_block",
+    "mccourse:raw_alexandrite_block",
+    "mccourse:alexandrite_ore",
+    "mccourse:deepslate_alexandrite_ore",
+    "mccourse:end_stone_alexandrite_ore",
+    "mccourse:nether_alexandrite_ore",
+    "mccourse:sound_block",
+    "mccourse:alexandrite_stairs",
+    "mccourse:alexandrite_slab",
+    "mccourse:alexandrite_pressure_plate",
+    "mccourse:alexandrite_button",
+    "mccourse:alexandrite_fence"
+  ]
+}
