@@ -12,6 +12,7 @@ import net.darkhail.mccourse.painting.ModPaintings;
 import net.darkhail.mccourse.potion.BetterBrewingRecipe;
 import net.darkhail.mccourse.potion.ModPotions;
 import net.darkhail.mccourse.sound.ModSounds;
+import net.darkhail.mccourse.villager.ModVillagers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -58,6 +59,7 @@ public class MCCourseMod
 
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

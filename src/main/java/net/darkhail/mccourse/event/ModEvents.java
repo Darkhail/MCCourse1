@@ -2,10 +2,12 @@ package net.darkhail.mccourse.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.darkhail.mccourse.MCCourseMod;
+import net.darkhail.mccourse.block.ModBlocks;
 import net.darkhail.mccourse.command.ReturnHomeCommand;
 import net.darkhail.mccourse.command.SetHomeCommand;
 import net.darkhail.mccourse.item.ModItems;
 import net.darkhail.mccourse.item.custom.HammerItem;
+import net.darkhail.mccourse.villager.ModVillagers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -113,6 +115,16 @@ public class ModEvents {
 
             trades.get(villagerLevel).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 12), stack, 2, 5, 0.06f
+            ));
+        }
+
+        if(event.getType() == ModVillagers.SOUND_MASTER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModBlocks.SOUND_BLOCK.get(), 1);
+            int villagerLevel = 1;
+
+            trades.get(villagerLevel).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 25), stack, 2, 5, 0.06f
             ));
         }
     }
