@@ -6,6 +6,7 @@ import net.darkhail.mccourse.enchantment.ModEnchantments;
 import net.darkhail.mccourse.item.ModCreativeModeTabs;
 import net.darkhail.mccourse.item.ModItemProperties;
 import net.darkhail.mccourse.item.ModItems;
+import net.darkhail.mccourse.loot.ModLootModifiers;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -44,6 +45,8 @@ public class MCCourseMod
 
         ModEnchantments.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
