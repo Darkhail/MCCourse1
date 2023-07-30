@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.darkhail.mccourse.block.ModBlocks;
 import net.darkhail.mccourse.effect.ModEffects;
 import net.darkhail.mccourse.enchantment.ModEnchantments;
+import net.darkhail.mccourse.fluid.ModFluidTypes;
+import net.darkhail.mccourse.fluid.ModFluids;
 import net.darkhail.mccourse.item.ModCreativeModeTabs;
 import net.darkhail.mccourse.item.ModItemProperties;
 import net.darkhail.mccourse.item.ModItems;
@@ -14,6 +16,8 @@ import net.darkhail.mccourse.potion.BetterBrewingRecipe;
 import net.darkhail.mccourse.potion.ModPotions;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.darkhail.mccourse.villager.ModVillagers;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -62,6 +66,9 @@ public class MCCourseMod
         ModPotions.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModParticles.register(modEventBus);
+
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -122,6 +129,9 @@ public class MCCourseMod
         {
             event.enqueueWork(() -> {
                 ModItemProperties.addCustomItemProperties();
+
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
 
             });
         }

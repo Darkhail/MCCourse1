@@ -5,6 +5,7 @@ import net.darkhail.mccourse.block.custom.AlexandriteLampBlock;
 import net.darkhail.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.darkhail.mccourse.block.custom.KohlrabiCropBlock;
 import net.darkhail.mccourse.block.custom.SoundBlock;
+import net.darkhail.mccourse.fluid.ModFluids;
 import net.darkhail.mccourse.item.ModItems;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.minecraft.sounds.SoundEvents;
@@ -89,6 +90,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> GEM_EMPOWERING_STATION = registerBlock("gem_empowering_station",
             () -> new GemEmpoweringStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
