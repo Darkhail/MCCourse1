@@ -2,6 +2,7 @@ package net.darkhail.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.darkhail.mccourse.block.ModBlocks;
+import net.darkhail.mccourse.block.entity.ModBlockEntities;
 import net.darkhail.mccourse.effect.ModEffects;
 import net.darkhail.mccourse.enchantment.ModEnchantments;
 import net.darkhail.mccourse.fluid.ModFluidTypes;
@@ -14,8 +15,11 @@ import net.darkhail.mccourse.painting.ModPaintings;
 import net.darkhail.mccourse.particle.ModParticles;
 import net.darkhail.mccourse.potion.BetterBrewingRecipe;
 import net.darkhail.mccourse.potion.ModPotions;
+import net.darkhail.mccourse.screen.GemEmpoweringStationScreen;
+import net.darkhail.mccourse.screen.ModMenuTypes;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.darkhail.mccourse.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -69,6 +73,9 @@ public class MCCourseMod
 
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -133,6 +140,7 @@ public class MCCourseMod
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
 
+                MenuScreens.register(ModMenuTypes.GEM_EMPOWERING_MENU.get(), GemEmpoweringStationScreen::new);
             });
         }
     }
