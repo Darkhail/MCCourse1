@@ -1,6 +1,7 @@
 package net.darkhail.mccourse.block.entity;
 
 import net.darkhail.mccourse.item.ModItems;
+import net.darkhail.mccourse.recipe.GemEmpoweringRecipe;
 import net.darkhail.mccourse.screen.GemEmpoweringStationMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,6 +27,8 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class GemEmpoweringStationBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
@@ -36,8 +39,7 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Menu
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.getItem() == ModItems.RAW_ALEXANDRITE.get();
-                case 1 -> true;
+                case 0, 1 -> true;
                 case 2 -> false;
                 case 3 -> stack.getItem() == ModItems.KOHLRABI.get();
                 default -> super.isItemValid(slot, stack);
@@ -155,10 +157,13 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Menu
     }
 
     private void craftItem() {
+        Optional<GemEmpoweringRecipe> recipe = getCurrentRecipe();
+        ItemStack resultItem = recipe.get().getResultItem(getLevel().registryAccess());
+
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(ModItems.ALEXANDRITE.get(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + 1));
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(resultItem.getItem(),
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + resultItem.getCount()));
     }
 
     private void resetProgress() {
@@ -174,12 +179,23 @@ public class GemEmpoweringStationBlockEntity extends BlockEntity implements Menu
     }
 
     private boolean hasRecipe() {
-        return canInsertAmountIntoOutputSlot(1) && canInsertItemIntoOutputSlot(ModItems.ALEXANDRITE.get())
-                && hasRecipeItemInInputSlot();
+        Optional<GemEmpoweringRecipe> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack resultItem = recipe.get().getResultItem(getLevel().registryAccess());
+
+        return canInsertAmountIntoOutputSlot(resultItem.getCount())
+                && canInsertItemIntoOutputSlot(resultItem.getItem());
     }
 
-    private boolean hasRecipeItemInInputSlot() {
-        return this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.RAW_ALEXANDRITE.get();
+    private Optional<GemEmpoweringRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for(int i = 0; i < this.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+        return this.level.getRecipeManager().getRecipeFor(GemEmpoweringRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

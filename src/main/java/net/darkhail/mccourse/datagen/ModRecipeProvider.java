@@ -2,10 +2,12 @@ package net.darkhail.mccourse.datagen;
 
 import net.darkhail.mccourse.MCCourseMod;
 import net.darkhail.mccourse.block.ModBlocks;
+import net.darkhail.mccourse.datagen.custom.GemEmpoweringRecipeBuilder;
 import net.darkhail.mccourse.item.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -46,6 +48,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "mccourse:raw_alexandrite", "alexandrite", "mccourse:raw_alexandrite_block", "alexandrite");
         oreSmelting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 0.25f, 200, "alexandrite");
         oreBlasting(pWriter, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 0.25f, 200, "alexandrite");
+
+        new GemEmpoweringRecipeBuilder(ModItems.RAW_ALEXANDRITE.get(), ModItems.ALEXANDRITE.get(), 3)
+                .unlockedBy("has_raw_alexandrite", has(ModItems.RAW_ALEXANDRITE.get())).save(pWriter);
+
+        new GemEmpoweringRecipeBuilder(Items.COAL, Items.DIAMOND, 7)
+                .unlockedBy("has_diamond", has(Items.DIAMOND)).save(pWriter);
+
+        new GemEmpoweringRecipeBuilder(Items.STICK, Items.BLAZE_POWDER, 1)
+                .unlockedBy("has_blaze_powder", has(Items.BLAZE_POWDER)).save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

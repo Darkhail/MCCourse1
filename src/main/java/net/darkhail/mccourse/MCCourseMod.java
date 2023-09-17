@@ -15,6 +15,7 @@ import net.darkhail.mccourse.painting.ModPaintings;
 import net.darkhail.mccourse.particle.ModParticles;
 import net.darkhail.mccourse.potion.BetterBrewingRecipe;
 import net.darkhail.mccourse.potion.ModPotions;
+import net.darkhail.mccourse.recipe.ModRecipes;
 import net.darkhail.mccourse.screen.GemEmpoweringStationScreen;
 import net.darkhail.mccourse.screen.ModMenuTypes;
 import net.darkhail.mccourse.sound.ModSounds;
@@ -76,6 +77,8 @@ public class MCCourseMod
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
