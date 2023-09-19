@@ -1,6 +1,7 @@
 package net.darkhail.mccourse.datagen;
 
 import net.darkhail.mccourse.MCCourseMod;
+import net.darkhail.mccourse.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.darkhail.mccourse.item.ModItems;
 import net.minecraft.data.PackOutput;
@@ -29,6 +30,15 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ItemTags.MUSIC_DISCS)
                 .add(ModItems.BAR_BRAWL_RECORD.get());
+
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.WALNUT_LOG.get().asItem())
+                .add(ModBlocks.WALNUT_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_WALNUT_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_WALNUT_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlocks.WALNUT_PLANKS.get().asItem());
     }
 
     @Override
