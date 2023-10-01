@@ -6,6 +6,7 @@ import net.darkhail.mccourse.fluid.ModFluids;
 import net.darkhail.mccourse.item.ModItems;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.darkhail.mccourse.util.ModWoodTypes;
+import net.darkhail.mccourse.worldgen.tree.WalnutTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -151,7 +152,7 @@ public class ModBlocks {
             () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.WALNUT));
 
     public static final RegistryObject<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
-            () -> new SaplingBlock(null, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+            () -> new SaplingBlock(new WalnutTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
