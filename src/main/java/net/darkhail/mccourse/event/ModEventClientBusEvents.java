@@ -5,6 +5,8 @@ import net.darkhail.mccourse.block.entity.ModBlockEntities;
 import net.darkhail.mccourse.block.entity.renderer.GemEmpoweringBlockEntityRenderer;
 import net.darkhail.mccourse.particle.AlexandriteParticles;
 import net.darkhail.mccourse.particle.ModParticles;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
@@ -22,5 +24,8 @@ public class ModEventClientBusEvents {
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.GEM_EMPOWERING_STATION_BE.get(),
                 GemEmpoweringBlockEntityRenderer::new);
+
+        event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);
     }
 }

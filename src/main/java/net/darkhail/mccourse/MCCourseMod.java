@@ -19,10 +19,12 @@ import net.darkhail.mccourse.recipe.ModRecipes;
 import net.darkhail.mccourse.screen.GemEmpoweringStationScreen;
 import net.darkhail.mccourse.screen.ModMenuTypes;
 import net.darkhail.mccourse.sound.ModSounds;
+import net.darkhail.mccourse.util.ModWoodTypes;
 import net.darkhail.mccourse.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -138,6 +140,7 @@ public class MCCourseMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             event.enqueueWork(() -> {
+                Sheets.addWoodType(ModWoodTypes.WALNUT);
                 ModItemProperties.addCustomItemProperties();
 
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());

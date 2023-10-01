@@ -55,6 +55,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         complexBlock(ModBlocks.GEM_EMPOWERING_STATION.get());
 
         saplingItem(ModBlocks.WALNUT_SAPLING);
+
+
+        simpleItem(ModItems.WALNUT_SIGN);
+        simpleItem(ModItems.WALNUT_HANGING_SIGN);
+
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
