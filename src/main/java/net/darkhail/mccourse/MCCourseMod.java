@@ -5,6 +5,8 @@ import net.darkhail.mccourse.block.ModBlocks;
 import net.darkhail.mccourse.block.entity.ModBlockEntities;
 import net.darkhail.mccourse.effect.ModEffects;
 import net.darkhail.mccourse.enchantment.ModEnchantments;
+import net.darkhail.mccourse.entity.ModEntities;
+import net.darkhail.mccourse.entity.client.RhinoRenderer;
 import net.darkhail.mccourse.fluid.ModFluidTypes;
 import net.darkhail.mccourse.fluid.ModFluids;
 import net.darkhail.mccourse.item.ModCreativeModeTabs;
@@ -25,6 +27,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -32,6 +35,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -81,6 +85,7 @@ public class MCCourseMod
         ModMenuTypes.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -147,6 +152,8 @@ public class MCCourseMod
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
 
                 MenuScreens.register(ModMenuTypes.GEM_EMPOWERING_MENU.get(), GemEmpoweringStationScreen::new);
+
+                EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
             });
         }
     }

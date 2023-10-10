@@ -2,11 +2,13 @@ package net.darkhail.mccourse.item;
 
 import net.darkhail.mccourse.MCCourseMod;
 import net.darkhail.mccourse.block.ModBlocks;
+import net.darkhail.mccourse.entity.ModEntities;
 import net.darkhail.mccourse.fluid.ModFluids;
 import net.darkhail.mccourse.item.custom.*;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -75,6 +77,10 @@ public class ModItems {
     public static final RegistryObject<Item> WALNUT_HANGING_SIGN = ITEMS.register("walnut_hanging_sign",
             () -> new HangingSignItem(ModBlocks.WALNUT_HANGING_SIGN.get(), ModBlocks.WALNUT_WALL_HANGING_SIGN.get(),
                     new Item.Properties().stacksTo(16)));
+
+    public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5,
+                    new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {
