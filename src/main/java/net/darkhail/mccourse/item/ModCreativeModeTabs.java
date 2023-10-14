@@ -81,6 +81,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
 
+                        output.accept(ModItems.DICE.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus) {
