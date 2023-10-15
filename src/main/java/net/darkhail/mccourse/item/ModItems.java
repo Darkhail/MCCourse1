@@ -3,6 +3,7 @@ package net.darkhail.mccourse.item;
 import net.darkhail.mccourse.MCCourseMod;
 import net.darkhail.mccourse.block.ModBlocks;
 import net.darkhail.mccourse.entity.ModEntities;
+import net.darkhail.mccourse.entity.custom.ModBoatEntity;
 import net.darkhail.mccourse.fluid.ModFluids;
 import net.darkhail.mccourse.item.custom.*;
 import net.darkhail.mccourse.sound.ModSounds;
@@ -85,6 +86,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> DICE = ITEMS.register("dice",
             () -> new DiceItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> WALNUT_BOAT = ITEMS.register("walnut_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.WALNUT, new Item.Properties()));
+    public static final RegistryObject<Item> WALNUT_CHEST_BOAT = ITEMS.register("walnut_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.WALNUT, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

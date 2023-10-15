@@ -82,6 +82,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
 
                         output.accept(ModItems.DICE.get());
+                        output.accept(ModItems.WALNUT_BOAT.get());
+                        output.accept(ModItems.WALNUT_CHEST_BOAT.get());
 
                     }).build());
 
