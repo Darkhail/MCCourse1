@@ -2,6 +2,7 @@ package net.darkhail.mccourse.entity;
 
 import net.darkhail.mccourse.MCCourseMod;
 import net.darkhail.mccourse.entity.custom.DiceProjectileEntity;
+import net.darkhail.mccourse.entity.custom.MagicProjectileEntity;
 import net.darkhail.mccourse.entity.custom.RhinoEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -23,8 +24,17 @@ public class ModEntities {
                     () -> EntityType.Builder.<DiceProjectileEntity>of(DiceProjectileEntity::new, MobCategory.MISC)
                             .sized(0.5f, 0.5f)
                             .clientTrackingRange(4)
+                            .updateInterval(20)
                             .setCustomClientFactory((spawnEntity, level) -> new DiceProjectileEntity(level))
                             .build("dice_projectile"));
+
+    public static final RegistryObject<EntityType<MagicProjectileEntity>> MAGIC_PROJECTILE =
+            ENTITY_TYPES.register("magic_projectile",
+                    () -> EntityType.Builder.<MagicProjectileEntity>of(MagicProjectileEntity::new, MobCategory.MISC)
+                            .sized(0.5f, 0.5f)
+                            .clientTrackingRange(4)
+                            .updateInterval(20)
+                            .build("magic_projectile"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

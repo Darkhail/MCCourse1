@@ -6,6 +6,7 @@ import net.darkhail.mccourse.block.entity.ModBlockEntities;
 import net.darkhail.mccourse.effect.ModEffects;
 import net.darkhail.mccourse.enchantment.ModEnchantments;
 import net.darkhail.mccourse.entity.ModEntities;
+import net.darkhail.mccourse.entity.client.MagicProjectileRenderer;
 import net.darkhail.mccourse.entity.client.RhinoRenderer;
 import net.darkhail.mccourse.fluid.ModFluidTypes;
 import net.darkhail.mccourse.fluid.ModFluids;
@@ -156,6 +157,7 @@ public class MCCourseMod
 
                 EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
                 EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
+                EntityRenderers.register(ModEntities.MAGIC_PROJECTILE.get(), MagicProjectileRenderer::new);
             });
         }
     }
