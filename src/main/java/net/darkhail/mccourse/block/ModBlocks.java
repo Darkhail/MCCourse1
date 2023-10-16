@@ -152,7 +152,7 @@ public class ModBlocks {
             () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.WALNUT));
 
     public static final RegistryObject<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
-            () -> new SaplingBlock(new WalnutTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+            () -> new ModSaplingBlock(new WalnutTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> DICE_BLOCK = BLOCKS.register("dice_block",
             () -> new DiceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noLootTable()));
