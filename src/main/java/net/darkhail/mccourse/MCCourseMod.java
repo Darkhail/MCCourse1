@@ -25,6 +25,7 @@ import net.darkhail.mccourse.screen.ModMenuTypes;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.darkhail.mccourse.util.ModWoodTypes;
 import net.darkhail.mccourse.villager.ModVillagers;
+import net.darkhail.mccourse.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -89,6 +90,8 @@ public class MCCourseMod
 
         ModRecipes.register(modEventBus);
         ModEntities.register(modEventBus);
+
+        ModTrunkPlacerTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
