@@ -85,6 +85,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WALNUT_BOAT.get());
                         output.accept(ModItems.WALNUT_CHEST_BOAT.get());
 
+                        output.accept(ModBlocks.COLORED_LEAVES.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus) {
