@@ -87,6 +87,9 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.COLORED_LEAVES.get());
 
+                        output.accept(ModItems.CATTAIL.get());
+                        output.accept(ModItems.CATTAIL_SEEDS.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus) {
