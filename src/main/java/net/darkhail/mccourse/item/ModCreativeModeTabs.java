@@ -86,6 +86,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WALNUT_CHEST_BOAT.get());
 
                         output.accept(ModBlocks.COLORED_LEAVES.get());
+                        output.accept(ModBlocks.KAUPEN_PORTAL.get());
 
                         output.accept(ModItems.CATTAIL.get());
                         output.accept(ModItems.CATTAIL_SEEDS.get());
