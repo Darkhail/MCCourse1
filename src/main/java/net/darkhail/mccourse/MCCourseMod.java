@@ -25,6 +25,7 @@ import net.darkhail.mccourse.screen.ModMenuTypes;
 import net.darkhail.mccourse.sound.ModSounds;
 import net.darkhail.mccourse.util.ModWoodTypes;
 import net.darkhail.mccourse.villager.ModVillagers;
+import net.darkhail.mccourse.worldgen.biome.ModTerraBlenderAPI;
 import net.darkhail.mccourse.worldgen.tree.ModFoliagePlacerTypes;
 import net.darkhail.mccourse.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -94,6 +95,8 @@ public class MCCourseMod
 
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacerTypes.register(modEventBus);
+
+        ModTerraBlenderAPI.registerRegions();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
