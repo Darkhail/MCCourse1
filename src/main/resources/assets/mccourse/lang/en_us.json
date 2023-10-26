@@ -107,6 +107,8 @@
 
   "entity.mccourse.mod_chest_boat": "Chest Boat",
 
+  "item.mccourse.cheese_pizza": "Cheese Pizza",
+
   "mccourse.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "mccourse.tooltip.liquid.amount": "%s mB"
 }

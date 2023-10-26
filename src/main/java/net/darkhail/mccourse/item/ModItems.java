@@ -97,6 +97,11 @@ public class ModItems {
     public static final RegistryObject<Item> CATTAIL_SEEDS = ITEMS.register("cattail_seeds",
             () -> new ItemNameBlockItem(ModBlocks.CATTAIL_CROP.get(), new Item.Properties()));
 
+    //Food
+    public static final RegistryObject<Item> CHEESE_PIZZA = ITEMS.register("cheese_pizza",
+            () -> new Item((new Item.Properties().food(ModFoodProperties.CHEESE_PIZZA))));
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

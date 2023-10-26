@@ -68,6 +68,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.CATTAIL);
         simpleItem(ModItems.CATTAIL_SEEDS);
+
+        //Food
+        simpleItem(ModItems.CHEESE_PIZZA);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

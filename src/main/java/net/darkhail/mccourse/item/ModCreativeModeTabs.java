@@ -91,6 +91,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CATTAIL.get());
                         output.accept(ModItems.CATTAIL_SEEDS.get());
 
+                        //Food
+                        output.accept(ModItems.CHEESE_PIZZA.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus) {
