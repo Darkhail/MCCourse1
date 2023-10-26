@@ -93,6 +93,7 @@ public class ModCreativeModeTabs {
 
                         //Food
                         output.accept(ModItems.CHEESE_PIZZA.get());
+                        output.accept(ModItems.PEPPERONI_PIZZA.get());
 
                     }).build());
 

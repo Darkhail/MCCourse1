@@ -100,6 +100,8 @@ public class ModItems {
     //Food
     public static final RegistryObject<Item> CHEESE_PIZZA = ITEMS.register("cheese_pizza",
             () -> new Item((new Item.Properties().food(ModFoodProperties.CHEESE_PIZZA))));
+    public static final RegistryObject<Item> PEPPERONI_PIZZA = ITEMS.register("pepperoni_pizza",
+            () -> new Item((new Item.Properties().food(ModFoodProperties.PEPPERONI_PIZZA))));
 
 
 

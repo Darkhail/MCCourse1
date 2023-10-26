@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bread"
+    },
+    "C": {
+      "item": "minecraft:milk_bucket"
+    },
+    "M": {
+      "item": "minecraft:porkchop"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "MCM",
+    "BBB"
+  ],
+  "result": {
+    "item": "mccourse:pepperoni_pizza"
+  },
+  "show_notification": true
+}

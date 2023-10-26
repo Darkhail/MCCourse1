@@ -71,6 +71,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //Food
         simpleItem(ModItems.CHEESE_PIZZA);
+        simpleItem(ModItems.PEPPERONI_PIZZA);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

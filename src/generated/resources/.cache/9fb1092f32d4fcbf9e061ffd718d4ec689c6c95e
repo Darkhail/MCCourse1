@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-25T23:39:48.32945	Recipes
+// 1.20.1	2023-10-26T00:24:03.2289266	Recipes
 a052bed88e42924de2158a3c90b7129a99a0be98 data/mccourse/advancements/recipes/alexandrite.json
 15201a36d0ae05c11f8a82b7b43dcf940f56c7f4 data/mccourse/advancements/recipes/misc/alexandrite.json
 ee0129f24bb36d18562730a2dda377e622f5da76 data/mccourse/advancements/recipes/misc/alexandrite_block.json
@@ -13,6 +13,7 @@ e638de98327fcefb8ed9720908bdc58ddbdf818b data/mccourse/advancements/recipes/misc
 5bde72fe8621cd820f99a052daea489b3bbaa29e data/mccourse/advancements/recipes/misc/alexandrite_from_smelting_nether_alexandrite_ore.json
 548f5248251721a2524e6f58cb4fb0b409fb7cd1 data/mccourse/advancements/recipes/misc/alexandrite_from_smelting_raw_alexandrite.json
 06f68902bd1d5e41ea3b3c37a3ed164a4d97509c data/mccourse/advancements/recipes/misc/cheese_pizza.json
+57ef8e220d4ae0d0903c00c9d30f37636b12b7ed data/mccourse/advancements/recipes/misc/pepperoni_pizza.json
 e73e936ffd0b7189e92d0e3ee64b131a5231a4c2 data/mccourse/advancements/recipes/misc/raw_alexandrite.json
 9ee2cebe9c88508ec4dc7e5d38cbf87b45c51dd6 data/mccourse/advancements/recipes/misc/raw_alexandrite_block.json
 018a7b411f8a306a1248fa4ee8977258b327ce7a data/mccourse/recipes/alexandrite.json
@@ -31,6 +32,7 @@ ac67ecd8ac366366c599fb56d87cf4f7cd80ae15 data/mccourse/recipes/alexandrite_from_
 88ff115169ef2ef312e32727b89c684d06cb79af data/mccourse/recipes/blaze_powder_from_gem_empowering.json
 59c59c330ff76acc06c5fd063a6917e1d76cdb93 data/mccourse/recipes/cheese_pizza.json
 d755634442a0409da0ce3eeafd54fb87bedca8c3 data/mccourse/recipes/diamond_from_gem_empowering.json
+79447c8aa98b20eec2ae7807182964a87a8a9152 data/mccourse/recipes/pepperoni_pizza.json
 6d219fbbf4741f7e642c23aa37a0f98f1f935e87 data/mccourse/recipes/raw_alexandrite.json
 361ee738a087c70c075acc2f440215157c9dd2d0 data/mccourse/recipes/raw_alexandrite_block.json
 08eb6a2355c277455f554b44885e24b3ea9e38be data/minecraft/advancements/recipes/blaze_powder.json

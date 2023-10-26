@@ -68,6 +68,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_bread", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(Items.BREAD.asItem()).build()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PEPPERONI_PIZZA.get())
+                .pattern("BBB")
+                .pattern("MCM")
+                .pattern("BBB")
+                .define('B', Items.BREAD.asItem())
+                .define('C', Items.MILK_BUCKET.asItem())
+                .define('M', Items.PORKCHOP.asItem())
+                .unlockedBy("has_bread", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.BREAD.asItem()).build()))
+                .save(pWriter);
+
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
