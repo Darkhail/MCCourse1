@@ -57,6 +57,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         new GemEmpoweringRecipeBuilder(Items.STICK, Items.BLAZE_POWDER, 1)
                 .unlockedBy("has_blaze_powder", has(Items.BLAZE_POWDER)).save(pWriter);
+
+        //Food
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CHEESE_PIZZA.get())
+                .pattern("BBB")
+                .pattern("BCB")
+                .pattern("BBB")
+                .define('B', Items.BREAD.asItem())
+                .define('C', Items.MILK_BUCKET.asItem())
+                .unlockedBy("has_bread", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.BREAD.asItem()).build()))
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
